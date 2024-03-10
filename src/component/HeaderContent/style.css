@@ -1,0 +1,50 @@
+.headerContent__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ecf0f5;
+}
+.headerContent__wrapper .header__left {
+  display: flex;
+  padding: 0 0 0 14px;
+}
+.headerContent__wrapper .header__left h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+.headerContent__wrapper .header__left span {
+  margin: 3px 0 0 12px;
+  color: #777;
+  font-weight: 200;
+  font-size: 1rem;
+}
+.headerContent__wrapper .header__right ul {
+  display: flex;
+  list-style: none;
+  font-size: 12px;
+  padding: 7px 5px;
+  margin-top: 0;
+  border-radius: 2px;
+  margin-bottom: 0;
+  padding-right: 18px;
+}
+.headerContent__wrapper .header__right li {
+  display: flex;
+  align-items: center;
+}
+.headerContent__wrapper .header__right li .fa-gauge {
+  padding-top: 2px;
+  padding-right: 8px;
+}
+.headerContent__wrapper .header__right li .fa-angle-right {
+  padding: 1px 7px 0 7px;
+  font-size: 0.5rem;
+  color: #ccc;
+}
+.headerContent__wrapper .header__right li:nth-child(3) {
+  color: #777;
+}/*# sourceMappingURL=style.css.map */
