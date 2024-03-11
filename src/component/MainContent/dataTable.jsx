@@ -2,6 +2,7 @@ import "./style.scss";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import EditFormLayout from "./editFormLayout";
 
 function calculateGrade(score) {
   if (score > 9) {
@@ -20,11 +21,8 @@ function calculateGrade(score) {
 function DataTable(formData1) {
   const [dataApi, setDataApi] = useState([]);
   const postApi = "https://60becf8e6035840017c17a48.mockapi.io/users";
-
-  const handlerOpenEditForm = () => {
-    const editForm = document.getElementById("form-2");
-    editForm.style.display = "block";
-  };
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
 
   useEffect(() => {
     axios
@@ -55,6 +53,18 @@ function DataTable(formData1) {
     }
   }, [formData1.formData]);
 
+  // const editStudent = (id) => {
+  //   axios
+  //     .delete(`${postApi}/${id}`)
+  //     .then(() => {
+  //       console.log("Student deleted successfully");
+  //       setDataApi((prevData) => prevData.map((student) => student.id !== id));
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error deleting student:", error);
+  //     });
+  // };
+
   const deleteStudent = (id) => {
     axios
       .delete(`${postApi}/${id}`)
@@ -67,6 +77,11 @@ function DataTable(formData1) {
       .catch((error) => {
         console.error("Error deleting student:", error);
       });
+  };
+
+  const editStudent = (student) => {
+    setIsFormVisible(!isFormVisible);
+    setSelectedStudent(student);
   };
 
   return (
@@ -90,7 +105,7 @@ function DataTable(formData1) {
           <div className="icon">
             <i
               className="fa-solid fa-pen"
-              onClick={() => handlerOpenEditForm(student)}
+              onClick={() => editStudent(student)}
             ></i>
             <i
               className="fa-solid fa-trash"
@@ -99,6 +114,7 @@ function DataTable(formData1) {
           </div>
         </tr>
       ))}
+      {isFormVisible && <EditFormLayout student={selectedStudent} />}
     </>
   );
 }

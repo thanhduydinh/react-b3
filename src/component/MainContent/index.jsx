@@ -3,7 +3,6 @@ import "./style.css";
 import { useState } from "react";
 import DataTable from "./dataTable";
 import FormLayout from "./formLayout";
-import EditFormLayout from "./editFormLayout";
 
 function MainContent() {
   const [formData1, setFormData] = useState(null);
@@ -20,7 +19,7 @@ function MainContent() {
   return (
     <div className="wrapper">
       {isFormVisible && <FormLayout sendMain={formData} />}
-      <EditFormLayout />
+
       <h3>
         Thông tin sinh viên
         <button onClick={handleAddButtonClick}>Add</button>

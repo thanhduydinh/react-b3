@@ -98,90 +98,92 @@ function FormLayout({ sendMain }) {
   return (
     <>
       {isFormVisible && (
-        <form action="" method="POST" className="form" id="form-1">
-          <h3 className="heading">Thêm sinh viên</h3>
-          <i className="fa-solid fa-x" onClick={handleCloseForm}></i>
-          <div className="spacer"></div>
+        <div className="wrapper__form">
+          <form action="" method="POST" className="form" id="form-1">
+            <h3 className="heading">Thêm sinh viên</h3>
+            <i className="fa-solid fa-x" onClick={handleCloseForm}></i>
+            <div className="spacer"></div>
 
-          <div className="form-group">
-            <label className="form-label">Tên đầy đủ</label>
-            <input
-              id="fullname"
-              name="name"
-              onBlur={checkInput}
-              type="text"
-              placeholder="VD: Đinh Duy Thành"
-              className="form-control"
-              onChange={handleInputChange}
-              value={formData.fullname}
-            />
-            <span className="form-message"></span>
-          </div>
+            <div className="form-group">
+              <label className="form-label">Tên đầy đủ</label>
+              <input
+                id="fullname"
+                name="name"
+                onBlur={checkInput}
+                type="text"
+                placeholder="VD: Đinh Duy Thành"
+                className="form-control"
+                onChange={handleInputChange}
+                value={formData.fullname}
+              />
+              <span className="form-message"></span>
+            </div>
 
-          <div className="form-group">
-            <label className="form-label">Email</label>
-            <input
-              name="email"
-              onBlur={checkInput}
-              id="email"
-              type="text"
-              placeholder="VD: email@domain.com"
-              className="form-control"
-              onChange={handleInputChange}
-              value={formData.email}
-            />
-            <span className="form-message"></span>
-          </div>
+            <div className="form-group">
+              <label className="form-label">Email</label>
+              <input
+                name="email"
+                onBlur={checkInput}
+                id="email"
+                type="text"
+                placeholder="VD: email@domain.com"
+                className="form-control"
+                onChange={handleInputChange}
+                value={formData.email}
+              />
+              <span className="form-message"></span>
+            </div>
 
-          <div className="form-group">
-            <label className="form-label">Địa chỉ</label>
-            <input
-              name="city"
-              onBlur={checkInput}
-              id="location"
-              type="text"
-              placeholder="VD : Hà Nội"
-              className="form-control"
-              onChange={handleInputChange}
-              value={formData.location}
-            />
-            <span className="form-message"></span>
-          </div>
+            <div className="form-group">
+              <label className="form-label">Địa chỉ</label>
+              <input
+                name="city"
+                onBlur={checkInput}
+                id="location"
+                type="text"
+                placeholder="VD : Hà Nội"
+                className="form-control"
+                onChange={handleInputChange}
+                value={formData.location}
+              />
+              <span className="form-message"></span>
+            </div>
 
-          <div className="form-group">
-            <label className="form-label">Số điện thoại</label>
-            <input
-              name="phoneNumber"
-              onBlur={checkInput}
-              id="phoneNumber"
-              placeholder="VD : 093xxx"
-              type="text"
-              className="form-control"
-              onChange={handleInputChange}
-              value={formData.phoneNumber}
-            />
-            <span className="form-message"></span>
-          </div>
+            <div className="form-group">
+              <label className="form-label">Số điện thoại</label>
+              <input
+                name="phoneNumber"
+                onBlur={checkInput}
+                id="phoneNumber"
+                placeholder="VD : 093xxx"
+                type="text"
+                className="form-control"
+                onChange={handleInputChange}
+                value={formData.phoneNumber}
+              />
+              <span className="form-message"></span>
+            </div>
 
-          <div className="form-group">
-            <label className="form-label">Điểm kết thúc học phần</label>
-            <input
-              name="score"
-              onBlur={checkInput}
-              id="score"
-              placeholder="Vui lòng nhập số"
-              type="text"
-              className="form-control"
-              onChange={handleInputChange}
-              value={formData.score}
-            />
-            <span className="form-message"></span>
-          </div>
+            <div className="form-group">
+              <label className="form-label">Điểm kết thúc học phần</label>
+              <input
+                name="score"
+                onBlur={checkInput}
+                id="score"
+                placeholder="Vui lòng nhập số"
+                type="text"
+                className="form-control"
+                onChange={handleInputChange}
+                value={formData.score}
+              />
+              <span className="form-message"></span>
+            </div>
 
-          <button className="form-submit" onClick={handlerSubmit}>
-            Submit
-          </button>
-        </form>
+            <button className="form-submit" onClick={handlerSubmit}>
+              Submit
+            </button>
+          </form>
+        </div>
       )}
     </>
   );
