@@ -6,9 +6,9 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__header">
         <div className="user">
-          <img src="/src/component/img/user2-160x160.jpg" alt="" />
+          <img src="/src/component/img/teacher.jpg" alt="" />
           <div className="user__inf">
-            <h3>Alexander Pierce</h3>
+            <h3>Nguyễn Quý Sỹ</h3>
             <p>
               <i className="fa-solid fa-circle"></i> Online
             </p>

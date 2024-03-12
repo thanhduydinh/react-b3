@@ -2,17 +2,18 @@
 import "./style.scss";
 import { useState } from "react";
 
-function EditFormLayout(student) {
+function EditFormLayout({ student, sendDataTable }) {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const handleCloseForm = () => {
     setIsFormVisible(false);
   };
   const [formData, setFormData] = useState({
-    name: student.student.name,
-    email: student.student.email,
-    city: student.student.city,
-    phoneNumber: student.student.phoneNumber,
-    score: student.student.score,
+    name: student.name,
+    email: student.email,
+    city: student.city,
+    phoneNumber: student.phoneNumber,
+    score: student.score,
+    id: student.id,
   });
 
   function checkInput() {
@@ -80,12 +81,8 @@ function EditFormLayout(student) {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
-    var isValid = checkInput();
-    if (isValid) {
-      // sendMain(formData);
-      handleCloseForm();
-    }
+    sendDataTable(formData);
+    handleCloseForm();
   };
 
   return (

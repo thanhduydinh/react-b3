@@ -52,10 +52,10 @@ function Header() {
           <li onClick={toggleDisplay}>
             <img
               className="img-menunav"
-              src="/src/component/img/user2-160x160.jpg"
+              src="/src/component/img/teacher.jpg"
               alt="/avarta"
             />
-            <p>Alexander Pierce</p>
+            <p>Nguyễn Quý Sỹ</p>
 
             <div className="dropdown__user" style={{ display: displayStyle }}>
               <div className="dropdown__header">
