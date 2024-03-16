@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
-function DeleteFormLayout({ student, sendDelete }) {
-  const [isFormVisible, setIsFormVisible] = useState(true);
+function DeleteFormLayout({ student, getModalDelete, sendDelete }) {
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    setIsFormVisible(true);
+  }, [getModalDelete]);
 
   const handleCheck = (e) => {
     setIsChecked(e.target.checked);
   };
 
   const handleCloseForm = () => {
-    setIsFormVisible(false);
+    setIsFormVisible(!isFormVisible);
   };
 
   const handlerDeleteSubmit = () => {

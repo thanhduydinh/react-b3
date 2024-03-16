@@ -3,38 +3,38 @@ import { useState } from "react";
 
 function Header() {
   const [displayStyle, setDisplayStyle] = useState("none");
+  const [isLogoHide, setIsLogoHide] = useState(false);
+
+  const [logoStyle, setLogoStyle] = useState({
+    width: "227px",
+    fontSize: "20px",
+  });
+  const [navbarStyle, setNavbarStyle] = useState({
+    width: "calc(99vw - 227px)",
+  });
+
+  const handleNavbarIconClick = () => {
+    setIsLogoHide((prevState) => !prevState);
+    setLogoStyle({
+      width: isLogoHide ? "227px" : "50px",
+      fontSize: isLogoHide ? "20px" : "18px",
+    });
+    setNavbarStyle({
+      width: isLogoHide ? "calc(99vw - 227px)" : "calc(99vw - 50px)",
+    });
+  };
 
   const toggleDisplay = () => {
     setDisplayStyle((prevStyle) => (prevStyle === "none" ? "block" : "none"));
   };
 
-  const [isLogoChanged, setIsLogoChanged] = useState(false);
-
-  const changeLogoText = () => {
-    const logoElement = document.querySelector(".logo");
-    if (logoElement) {
-      if (!isLogoChanged) {
-        logoElement.innerHTML = "Admin<p>LTE</p>";
-      } else {
-        logoElement.innerHTML = "<p>ALT</p>";
-      }
-      setIsLogoChanged(!isLogoChanged);
-    }
-  };
-
-  // Function để xử lý khi click vào navbar icon
-  const handleNavbarIconClick = () => {
-    // Gọi function để thay đổi nội dung của logo
-    changeLogoText();
-  };
-
   return (
     <header>
-      <div className="logo">
-        Admin<p>LTE</p>
+      <div className="logo" style={logoStyle}>
+        {isLogoHide ? <p>ALT</p> : <p>AdminLTE</p>}
       </div>
 
-      <div className="navbar">
+      <div className="navbar" style={navbarStyle}>
         <div className="navbar__icon" onClick={handleNavbarIconClick}>
           <i className="fa-solid fa-bars"></i>
         </div>

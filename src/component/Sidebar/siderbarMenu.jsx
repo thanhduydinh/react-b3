@@ -105,9 +105,9 @@ function SidebarMenu() {
       {components.map((component, index) => (
         <>
           <li
-            key={index}
             className={`component${index}`}
             onClick={() => toggleSidebarChild(index)}
+            key={Math.random()}
           >
             <i className={`fa-solid  ${component.logo}`}>
               <span>{component.name}</span>
@@ -148,8 +148,8 @@ function SidebarMenu() {
 
           {showChild[index] ? (
             <ul className={"sideBarChild"}>
-              {component.child.map((child, index) => (
-                <li key={index}>
+              {component.child.map((child) => (
+                <li key={Math.random()}>
                   <i className="fa-regular fa-circle"></i>
                   {child}
                 </li>

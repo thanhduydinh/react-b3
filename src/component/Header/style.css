@@ -20,6 +20,7 @@ header .logo {
 }
 header .logo p {
   font-weight: 300;
+  margin: 0;
 }
 
 .navbar {
